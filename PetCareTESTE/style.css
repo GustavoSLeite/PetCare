@@ -89,7 +89,25 @@ header a:hover {
     background-image: url(./img/vecteezy_ai-generated-dogs-and-cats-together-on-a-blue-background_35817195.jpg);
     background-size: cover;
     height: 100vh;
-    
+    position: relative; /* Para que o pseudo-elemento se posicione em relação a esta seção */
+  
+}
+
+.first-section::before {
+    content: ""; /* Necessário para criar um pseudo-elemento */
+    position: absolute; /* Para que ocupe a mesma posição da seção */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Cor preta com 50% de opacidade */
+    z-index: 1; /* Para que fique abaixo do conteúdo */
+}
+
+.first-section h1,
+.first-section .img {
+    position: relative; /* Para garantir que fiquem acima da sobreposição */
+    z-index: 2; /* Para que fiquem acima do pseudo-elemento */
 }
 
 .first-section h1 {
@@ -117,6 +135,40 @@ header a:hover {
 
 }
 
+.oferecemos {
+    display: flex;
+    justify-content: space-around; /* Para deixar as caixas lado a lado */
+    margin: 70px 0; /* Margem acima e abaixo da seção */
+}
+
+.dados1 , .dados2 {
+    background-color: #fff; /* Cor de fundo da caixa */
+    border: 3px solid rgb(106, 245, 245);
+    border-radius: 20px; /* Bordas arredondadas */
+    width: 300px; /* Largura das caixas */
+    padding: 20px; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto */
+}
+
+.dados1 h3{
+    color: rgb(106, 245, 245);
+
+}
+
+.dados2 h3{
+
+    color: rgb(106, 245, 245);
+    
+
+}
+
+.dados1 , .dados2 p{
+    color: #000;
+}
+.dados1 img{
+    height: 80px;
+   margin-top: 40px;
+}
 .second-section {
     display: flex;
     justify-content: space-around;
